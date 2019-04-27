@@ -5,12 +5,14 @@ import {
   ɵmarkDirty as markDirty,
 } from '@angular/core';
 
+import { ButtonModule } from './button.component';
+
 @Component({
   selector: 'zippy',
   template: `
-    <button (click)="toggle()">
+    <ivy-button (ivyClick)="toggle()">
       {{title}}
-    </button>
+    </ivy-button>
 
     <div [hidden]="!show">
       <ng-content></ng-content>
@@ -33,5 +35,8 @@ export class ZippyComponent {
 @NgModule({
   declarations: [ZippyComponent],
   exports: [ZippyComponent],
+  imports: [
+    ButtonModule,
+  ],
 })
 export class ZippyModule {}
