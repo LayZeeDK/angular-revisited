@@ -8,7 +8,7 @@ export class CapitalizePipe implements PipeTransform {
     return value
       .split(' ')
       .filter(x => !!x)
-      .map(s => s[0].toUpperCase() + s.slice(1, s.length))
+      .map(x => x[0].toUpperCase() + x.slice(1, x.length))
       .join(' ');
   }
 }
