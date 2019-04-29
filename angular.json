@@ -3,27 +3,27 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-revisited": {
+    "ivy-material": {
       "projectType": "application",
       "schematics": {},
-      "root": "",
-      "sourceRoot": "src",
+      "root": "projects/ivy-material",
+      "sourceRoot": "projects/ivy-material/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-revisited",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
+            "outputPath": "dist/ivy-material",
+            "index": "projects/ivy-material/src/index.html",
+            "main": "projects/ivy-material/src/main.ts",
+            "polyfills": "projects/ivy-material/src/polyfills.ts",
+            "tsConfig": "projects/ivy-material/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/ivy-material/src/favicon.ico",
+              "projects/ivy-material/src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "projects/ivy-material/src/styles.css"
             ],
             "scripts": []
           },
@@ -31,8 +31,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "projects/ivy-material/src/environments/environment.ts",
+                  "with": "projects/ivy-material/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -57,33 +57,33 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-revisited:build"
+            "browserTarget": "ivy-material:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-revisited:build:production"
+              "browserTarget": "ivy-material:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-revisited:build"
+            "browserTarget": "ivy-material:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
+            "main": "projects/ivy-material/src/test.ts",
+            "polyfills": "projects/ivy-material/src/polyfills.ts",
+            "tsConfig": "projects/ivy-material/tsconfig.spec.json",
+            "karmaConfig": "projects/ivy-material/karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/ivy-material/src/favicon.ico",
+              "projects/ivy-material/src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "projects/ivy-material/src/styles.css"
             ],
             "scripts": []
           }
@@ -92,9 +92,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "projects/ivy-material/tsconfig.app.json",
+              "projects/ivy-material/tsconfig.spec.json",
+              "projects/ivy-material/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -104,16 +104,16 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-revisited:serve"
+            "protractorConfig": "projects/ivy-material/e2e/protractor.conf.js",
+            "devServerTarget": "ivy-material:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-revisited:serve:production"
+              "devServerTarget": "ivy-material:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "angular-revisited"
+  "defaultProject": "ivy-material"
 }
