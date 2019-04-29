@@ -1,14 +1,17 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Component({
-  selector: 'ivy-button',
+  selector: 'button[ivy-button]',
   template: `
-    <button (click)="ivyClick.emit()">
-      <ng-content></ng-content>
-    </button>
+    <ng-content></ng-content>
   `,
 })
 export class ButtonComponent {
   @Output()
   ivyClick = new EventEmitter<void>();
+
+  @HostListener('click')
+  onClick() {
+    this.ivyClick.emit();
+  }
 }

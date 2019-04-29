@@ -10,9 +10,9 @@ import { ButtonComponent } from './button.component';
 @Component({
   selector: 'zippy',
   template: `
-    <ivy-button (ivyClick)="toggle()">
+    <button ivy-button (ivyClick)="toggle()">
       {{title}}
-    </ivy-button>
+    </button>
 
     <div [hidden]="!show">
       <ng-content></ng-content>
