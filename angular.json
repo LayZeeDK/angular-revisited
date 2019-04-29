@@ -114,6 +114,93 @@
           }
         }
       }
+    },
+    "render-modules": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true
+        }
+      },
+      "root": "projects/render-modules",
+      "sourceRoot": "projects/render-modules/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/render-modules",
+            "index": "projects/render-modules/src/index.html",
+            "main": "projects/render-modules/src/main.ts",
+            "polyfills": "projects/render-modules/src/polyfills.ts",
+            "tsConfig": "projects/render-modules/tsconfig.app.json",
+            "assets": [
+              "projects/render-modules/src/favicon.ico",
+              "projects/render-modules/src/assets"
+            ],
+            "styles": [
+              "projects/render-modules/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/render-modules/src/environments/environment.ts",
+                  "with": "projects/render-modules/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "render-modules:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "render-modules:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "render-modules:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/render-modules/tsconfig.app.json",
+              "projects/render-modules/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ivy-material"
 }
