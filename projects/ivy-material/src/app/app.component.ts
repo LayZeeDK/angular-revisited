@@ -1,4 +1,3 @@
-import { FocusMonitor } from '@angular/cdk/a11y';
 import { Component, NgModule } from '@angular/core';
 
 import { CapitalizeModule } from './capitalize.pipe';
@@ -24,9 +23,6 @@ export class AppComponent {
     CapitalizeModule,
     CartButtonModule,
     ZippyModule,
-  ],
-  providers: [
-    FocusMonitor,
   ],
 })
 export class AppModule {}
