@@ -1,5 +1,3 @@
-import '@angular/compiler';
-
 import {
   enableProdMode,
   ɵrenderComponent as renderComponent,
@@ -7,6 +5,7 @@ import {
 
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
+
 
 if (environment.production) {
   enableProdMode();

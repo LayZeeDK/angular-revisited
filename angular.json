@@ -131,6 +131,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/render-modules",
             "index": "projects/render-modules/src/index.html",
             "main": "projects/render-modules/src/main.ts",
