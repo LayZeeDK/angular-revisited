@@ -6,7 +6,7 @@ import { ButtonDirective } from './button.directive';
   selector: 'zippy',
   template: `
     <button ivyButton (ivyClick)="toggle()">
-      {{title}}
+      {{icon}} {{title}}
     </button>
 
     <div [hidden]="!show">
@@ -18,6 +18,11 @@ export class ZippyComponent {
   @Input()
   title: string;
 
+  get icon(): string {
+    return this.show
+      ? '▼'
+      : '►';
+  }
   show = false;
 
   toggle() {

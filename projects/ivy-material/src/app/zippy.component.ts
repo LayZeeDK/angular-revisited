@@ -11,7 +11,7 @@ import { ButtonModule } from './button.component';
   selector: 'zippy',
   template: `
     <ivy-button (ivyClick)="toggle()">
-      {{title}}
+      {{icon}} {{title}}
     </ivy-button>
 
     <div [hidden]="!show">
@@ -23,6 +23,11 @@ export class ZippyComponent {
   @Input()
   title: string;
 
+  get icon(): string {
+    return this.show
+      ? '▼'
+      : '►';
+  }
   show = false;
 
   toggle() {
