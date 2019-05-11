@@ -1,6 +1,5 @@
 import { Component, NgModule } from '@angular/core';
 import { MatButtonModule, MatIconModule } from '@angular/material';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'cart-button',
@@ -24,7 +23,6 @@ export class CartButtonComponent {
   declarations: [CartButtonComponent],
   exports: [CartButtonComponent],
   imports: [
-    NoopAnimationsModule,
     MatButtonModule,
     MatIconModule,
   ],

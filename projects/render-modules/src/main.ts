@@ -23,8 +23,6 @@ if (environment.production) {
   enableProdMode();
 }
 
-// NoopAnimationsModule
-
 const platform: PlatformRef = platformBrowser();
 const ngZoneInjector: Injector = Injector.create([
   {
@@ -48,7 +46,11 @@ const extraProviders: StaticProvider[] = [
   },
 ];
 const rootInjector: Injector =
-  createInjector(BrowserAnimationsModule, ngZoneInjector, extraProviders, 'root');
+  createInjector(
+    BrowserAnimationsModule,
+    ngZoneInjector,
+    extraProviders,
+    'root');
 
 renderComponent(AppComponent, {
   hostFeatures: [

@@ -12,7 +12,8 @@ import {
   ɵLifecycleHooksFeature as LifecycleHooksFeature,
   ɵrenderComponent as renderComponent,
 } from '@angular/core';
-import { BrowserModule, platformBrowser } from '@angular/platform-browser';
+import { platformBrowser } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
@@ -45,7 +46,11 @@ const extraProviders: StaticProvider[] = [
   },
 ];
 const rootInjector: Injector =
-  createInjector(BrowserModule, ngZoneInjector, extraProviders, 'root');
+  createInjector(
+    BrowserAnimationsModule,
+    ngZoneInjector,
+    extraProviders,
+    'root');
 
 renderComponent(AppComponent, {
   hostFeatures: [
